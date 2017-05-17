@@ -8,15 +8,15 @@ TriggMine web site: http://www.triggmine.com/
 TriggMine API сan take 8 types of events. All events models send through SendEvent method which has static and async versions.
 
 #### Event list 
-**Event type** |
-Registration |
-Cart |
-History |
-Login |
-Logout |
-Navigation |
-Order |
-Diagnostic |
+**Event type**
+* Registration
+* Cart
+* History
+* Login
+* Logout
+* Navigation
+* Order
+* Diagnostic
 
 ### Example
 #### Configure your client
@@ -29,16 +29,17 @@ client = Client('YOUR API_URL', 'YOUR API_KEY')
 ```Python
 # Registration event example
 response = self.client.registration.create(device_id='4c3d48512d48b2603092b5a45ba74c8c', 
-                                                   device_id_1='465060737', 
-                                                   customer_id='1', 
-                                                   customer_first_name='Jhon', 
-                                                   customer_last_name='Doe', 
-                                                   customer_email='Jhon.Doe@example.com', 
-                                                   customer_date_created=str(datetime.datetime.now()))
+                                           device_id_1='465060737', 
+                                           customer_id='1', 
+                                           customer_first_name='Jhon', 
+                                           customer_last_name='Doe', 
+                                           customer_email='Jhon.Doe@example.com', 
+                                           customer_date_created=str(datetime.datetime.now()))
 
 # Diagnostic event example
 response = client.diagnostic.create(date_created=str(datetime.datetime.now()),
-                                                 diagnostic_type="Install_Test_Plugin", description="TestCms", status=1)
+                                           diagnostic_type="Install_Test_Plugin", 
+                                           description="TestCms", status=1)
 ```
 
 ### API Docs
